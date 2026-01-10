@@ -10,11 +10,9 @@ body {
   height: 100vh;
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   font-family: system-ui, -apple-system, sans-serif;
-
-  display: flex;              // 화면 정중앙
+  display: flex; 
   align-items: center;
   justify-content: center;
-
   overflow: hidden;
   position: relative;
 }
@@ -51,15 +49,16 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.4rem;
+  gap: 0.5rem; /* 간격 살짝 조정 */
   perspective: 1000px;
   z-index: 1;
+  width: 100%; /* 너비 확보 */
 }
 
 /* letters */
 .letter {
-  /* 🔥 화면 크기에 강하게 비례 */
-  font-size: clamp(3rem, 15vw, 18rem);
+  /* 🔥 글자 크기를 기존보다 약 2배 확대 (최대 18rem -> 35rem) */
+  font-size: clamp(5rem, 25vw, 35rem); 
 
   font-weight: 800;
   color: #60a5fa;
@@ -76,10 +75,10 @@ body::after {
 /* spacing */
 .letter.space {
   animation: none;
-  width: 0.6em;
+  width: 0.4em;
 }
 
-/* wave delay */
+/* wave delay - 기존과 동일 */
 .letter:nth-child(1)  { animation-delay: 0s; }
 .letter:nth-child(2)  { animation-delay: 0.1s; }
 .letter:nth-child(3)  { animation-delay: 0.2s; }
@@ -102,22 +101,13 @@ body::after {
     transform: translateY(0) rotateX(0deg);
   }
   50% {
-    transform: translateY(-14px) rotateX(12deg);
+    transform: translateY(-25px) rotateX(12deg); /* 높이 반비례 조정 */
   }
 }
 
 /* background motion */
 @keyframes bg-wave {
-  0% {
-    transform: translate(-10%, -10%) scale(1);
-    opacity: 0.4;
-  }
-  50% {
-    transform: translate(10%, 10%) scale(1.15);
-    opacity: 0.7;
-  }
-  100% {
-    transform: translate(-10%, -10%) scale(1);
-    opacity: 0.4;
-  }
+  0% { transform: translate(-10%, -10%) scale(1); opacity: 0.4; }
+  50% { transform: translate(10%, 10%) scale(1.15); opacity: 0.7; }
+  100% { transform: translate(-10%, -10%) scale(1); opacity: 0.4; }
 }
