@@ -5,18 +5,19 @@
   box-sizing: border-box;
 }
 
-/* base layout */
+/* full screen center */
 body {
   height: 100vh;
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   font-family: system-ui, -apple-system, sans-serif;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
   position: relative;
 }
 
-/* blue ambient glow */
+/* blue ambient background */
 body::before {
   content: '';
   position: absolute;
@@ -29,7 +30,7 @@ body::before {
   pointer-events: none;
 }
 
-/* white breathing background light */
+/* white breathing glow */
 body::after {
   content: '';
   position: absolute;
@@ -43,23 +44,23 @@ body::after {
   pointer-events: none;
 }
 
-/* text wrapper */
+/* text container */
 .container {
   display: flex;
-  gap: 0.35rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
   perspective: 1000px;
   z-index: 1;
 }
 
 /* letters */
 .letter {
-  /* 🔽 글씨 크기만 줄임 */
-  font-size: clamp(1.2rem, 3vw, 2.2rem);
+  /* 화면 크기에 비례 */
+  font-size: clamp(1.8rem, 6vw, 3.4rem);
 
   font-weight: 800;
   color: #60a5fa;
-
-  /* ✅ 네온은 예전 그대로 */
   text-shadow:
     0 0 25px rgba(96, 165, 250, 0.8),
     0 0 60px rgba(96, 165, 250, 0.35);
@@ -69,7 +70,7 @@ body::after {
   animation: wave 3.8s ease-in-out infinite;
 }
 
-/* spacing letters */
+/* spacing */
 .letter.space {
   animation: none;
   width: 0.6rem;
@@ -98,7 +99,7 @@ body::after {
     transform: translateY(0) rotateX(0deg);
   }
   50% {
-    transform: translateY(-12px) rotateX(10deg);
+    transform: translateY(-14px) rotateX(12deg);
   }
 }
 
