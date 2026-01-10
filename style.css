@@ -10,9 +10,11 @@ body {
   height: 100vh;
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
   font-family: system-ui, -apple-system, sans-serif;
-  display: flex;
+
+  display: flex;              // 화면 정중앙
   align-items: center;
   justify-content: center;
+
   overflow: hidden;
   position: relative;
 }
@@ -56,11 +58,12 @@ body::after {
 
 /* letters */
 .letter {
-  /* 화면 크기에 비례 */
-  font-size: clamp(1.8rem, 6vw, 3.4rem);
+  /* 🔥 화면 크기에 강하게 비례 */
+  font-size: clamp(3rem, 15vw, 18rem);
 
   font-weight: 800;
   color: #60a5fa;
+
   text-shadow:
     0 0 25px rgba(96, 165, 250, 0.8),
     0 0 60px rgba(96, 165, 250, 0.35);
@@ -73,7 +76,7 @@ body::after {
 /* spacing */
 .letter.space {
   animation: none;
-  width: 0.6rem;
+  width: 0.6em;
 }
 
 /* wave delay */
