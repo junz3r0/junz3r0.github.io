@@ -56,13 +56,15 @@ body::after {
   perspective: 1000px;
   z-index: 1;
 
-  white-space: nowrap;   /* 🔥 줄바꿈 완전 차단 */
-  flex-wrap: nowrap;     /* 🔥 GitHub Pages 대응 */
+  white-space: nowrap;
+  flex-wrap: nowrap;
 }
 
 /* letters */
 .letter {
-  font-size: clamp(3rem, 15vw, 18rem);
+  /* 🔽 기존 대비 정확히 절반 수준 */
+  font-size: clamp(2rem, 7.5vw, 9rem);
+
   font-weight: 800;
   color: #60a5fa;
 
