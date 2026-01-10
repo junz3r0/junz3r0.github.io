@@ -29,7 +29,7 @@ body::before {
   pointer-events: none;
 }
 
-/* white breathing light */
+/* white breathing background light */
 body::after {
   content: '';
   position: absolute;
@@ -53,13 +53,17 @@ body::after {
 
 /* letters */
 .letter {
-  /* ↓↓↓ 기존 대비 1/4 크기 */
-  font-size: clamp(1.6rem, 4vw, 3rem);
-  font-weight: 700;
+  /* 🔽 글씨 크기만 줄임 */
+  font-size: clamp(1.2rem, 3vw, 2.2rem);
+
+  font-weight: 800;
   color: #60a5fa;
+
+  /* ✅ 네온은 예전 그대로 */
   text-shadow:
-    0 0 10px rgba(96, 165, 250, 0.6),
-    0 0 25px rgba(96, 165, 250, 0.3);
+    0 0 25px rgba(96, 165, 250, 0.8),
+    0 0 60px rgba(96, 165, 250, 0.35);
+
   display: inline-block;
   transform-origin: bottom center;
   animation: wave 3.8s ease-in-out infinite;
