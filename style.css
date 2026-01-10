@@ -1,9 +1,15 @@
+/* =========================
+   Reset
+========================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* =========================
+   Body & Background
+========================= */
 body {
   height: 100vh;
   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
@@ -11,43 +17,71 @@ body {
   font-family: system-ui, -apple-system, sans-serif;
   display: grid;
   place-items: center;
+  position: relative;
 }
 
-/* 은은한 파도 배경 그라데이션 (선택) */
+/* 은은한 블루 톤 파도 */
 body::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.08) 0%, transparent 40%);
+  background: radial-gradient(
+    circle at 30% 70%,
+    rgba(59, 130, 246, 0.08) 0%,
+    transparent 40%
+  );
   pointer-events: none;
 }
 
-.container {
-  display: flex;
-  gap: 0.8rem; /* 글자 사이 간격 */
-  perspective: 1000px; /* 살짝 3D 느낌 */
+/* 전체 배경에 흰빛 웨이브 */
+body::after {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 255, 255, 0.06) 0%,
+    transparent 40%
+  );
+  animation: bg-wave 8s ease-in-out infinite;
+  pointer-events: none;
 }
 
+/* =========================
+   Container
+========================= */
+.container {
+  display: flex;
+  gap: 0.8rem;
+  perspective: 1000px;
+  z-index: 1; /* 배경 위로 */
+}
+
+/* =========================
+   Letters
+========================= */
 .letter {
-  font-size: clamp(5rem, 18vw, 14rem); /* 화면 크기에 따라 자동 조절 */
+  font-size: clamp(5rem, 18vw, 14rem);
   font-weight: 800;
-  color: #60a5fa; /* 메인 파란색 */
-  text-shadow: 
-    0 0 20px rgba(96, 165, 250, 0.6),
-    0 0 40px rgba(96, 165, 250, 0.3);
+  color: #60a5fa;
+  text-shadow:
+    0 0 25px rgba(96, 165, 250, 0.8),
+    0 0 60px rgba(96, 165, 250, 0.35);
   display: inline-block;
   animation: wave 3.8s infinite ease-in-out;
   transform-origin: bottom center;
-  position: relative;
 }
 
-/* 각 글자마다 살짝 다른 타이밍으로 파도 느낌 */
-.letter:nth-child(1) { animation-delay: 0.0s;  }
+/* 글자별 딜레이 */
+.letter:nth-child(1) { animation-delay: 0s; }
 .letter:nth-child(2) { animation-delay: 0.12s; }
 .letter:nth-child(3) { animation-delay: 0.24s; }
 .letter:nth-child(4) { animation-delay: 0.36s; }
 .letter:nth-child(5) { animation-delay: 0.48s; }
 
+/* =========================
+   Animations
+========================= */
 @keyframes wave {
   0%, 100% {
     transform: translateY(0) rotateX(0deg);
@@ -57,24 +91,17 @@ body::before {
   }
 }
 
-/* 은은한 반짝임 효과 (선택사항) */
-.letter::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255,255,255,0.15),
-    transparent
-  );
-  transform: translateX(-100%);
-  animation: shine 6s infinite;
-  pointer-events: none;
-}
-
-@keyframes shine {
-  0%   { transform: translateX(-100%); }
-  20%  { transform: translateX(100%); }
-  100% { transform: translateX(100%); }
+@keyframes bg-wave {
+  0% {
+    transform: translate(-10%, -10%) scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: translate(10%, 10%) scale(1.15);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-10%, -10%) scale(1);
+    opacity: 0.4;
+  }
 }
