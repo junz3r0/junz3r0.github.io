@@ -49,16 +49,16 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem; /* 간격 살짝 조정 */
+  gap: 0.3rem; 
   perspective: 1000px;
   z-index: 1;
-  width: 100%; /* 너비 확보 */
 }
 
 /* letters */
 .letter {
-  /* 🔥 글자 크기를 기존보다 약 2배 확대 (최대 18rem -> 35rem) */
-  font-size: clamp(5rem, 25vw, 35rem); 
+  /* 🔥 너무 크지도, 너무 작지도 않은 중간 크기 (기존 25vw -> 12vw) */
+  /* PC 모니터에서 딱 보기 좋은 크기로 제한(max 15rem) */
+  font-size: clamp(4rem, 12vw, 15rem); 
 
   font-weight: 800;
   color: #60a5fa;
@@ -75,10 +75,10 @@ body::after {
 /* spacing */
 .letter.space {
   animation: none;
-  width: 0.4em;
+  width: 0.35em; 
 }
 
-/* wave delay - 기존과 동일 */
+/* wave delay */
 .letter:nth-child(1)  { animation-delay: 0s; }
 .letter:nth-child(2)  { animation-delay: 0.1s; }
 .letter:nth-child(3)  { animation-delay: 0.2s; }
@@ -101,7 +101,7 @@ body::after {
     transform: translateY(0) rotateX(0deg);
   }
   50% {
-    transform: translateY(-25px) rotateX(12deg); /* 높이 반비례 조정 */
+    transform: translateY(-20px) rotateX(12deg);
   }
 }
 
