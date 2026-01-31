@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>blog.junzero.kr</title>
+        <link>https://junzero.kr/</link>
+        <description>Recent content on blog.junzero.kr</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>ko-kr</language>
+        <lastBuildDate>Sat, 31 Jan 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://junzero.kr/index.xml" rel="self" type="application/rss+xml" /><item>
+            <title>test</title>
+            <link>https://junzero.kr/pwn/test/</link>
+            <pubDate>Sat, 31 Jan 2026 00:00:00 +0000</pubDate>
+            <guid>https://junzero.kr/pwn/test/</guid>
+            <description>&lt;h2 id=&#34;문제-설명&#34;&gt;문제 설명&#xA;&lt;/h2&gt;&lt;p&gt;간단 요약&lt;/p&gt;&#xA;&lt;h2 id=&#34;풀이&#34;&gt;풀이&#xA;&lt;/h2&gt;&lt;ul&gt;&#xA;&lt;li&gt;취약점:&lt;/li&gt;&#xA;&lt;li&gt;익스플로잇:&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;h2 id=&#34;익스플로잇&#34;&gt;익스플로잇&#xA;&lt;/h2&gt;&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# exploit code&lt;/span&gt;&#xA;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+        </item></channel>
+</rss>
